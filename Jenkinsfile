@@ -5,7 +5,7 @@ pipeline{
             steps{
                 checkout scm
                 script{
-                    app = docker.build()
+                    app = docker.build("minecraft_server")
                     docker.withRegistry('docker/minecraft', 'dockerCredentials'){
                         app.push()
                     }
