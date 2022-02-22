@@ -6,7 +6,7 @@ pipeline{
                 checkout scm
                 script{
                     app = docker.build('matiasvg2018/minecraft_server:latest')
-                    docker.withRegistry('matiasvg2018/minecraft_server', 'dockerCredentials'){
+                    docker.withRegistry('', 'dockerCredentials'){
                         app.push()
                     }
                 }
